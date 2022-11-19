@@ -7,19 +7,46 @@ let step;
 let sprite_proportions = 0.9;
 let canvas_proportion = 1;
 var G;
-var input_delegate;
 let cow
 let canvas;
-let NUM_CHIAN = new NumberChain();
+let NUM_CHIAN;
+let num;
 
 
 
-function keyTyped() {
-    if ("1234567890bnmhjcxzds".includes(key)){
-    // console.alert(key)
-    //     input_delegate.keyTyped(key)
+function keyTyped(key) {
+    if (!"1234567890Abnmhjcxzds".includes(key)) {
+        return
     }
-    // console.log(key)
+
+    if (key == "A") {
+        if (num.length >0) {
+            num.pop()
+        }else{
+            NUM_CHIAN.delete()
+        }
+        return;
+    } else if (key == "B") {
+        NUM_CHIAN.clear();
+        num = []
+    }
+    if(num.length == 2){
+        num = []
+    }
+
+
+    num.push(key)
+
+    if (num.length == 2) {
+        NUM_CHIAN.addNumber(num[0], num[1])
+    }
+
+    console.log(key)
+
+
+
+    document.querySelector('#number_label').innerHTML = NUM_CHIAN.numbers.join(" -") + ">>" + num.join(" ");
+
 
 }
 
@@ -29,6 +56,7 @@ function preload() {
         // true for mobile device
         document.querySelector('#keypad').style.display = "none";
     }
+
 
 }
 
@@ -40,8 +68,13 @@ function setup() {
     step = canvas_size / 10;
     canvas = createCanvas(canvas_size, windowHeight);
     canvas.parent('canvas');
-
-
+    frameRate(5 );
+    num = []
+    NUM_CHIAN = new NumberChain();
+    pi = "3141592653589793238462643"
+    for (let i = 1; i < pi.length; i+=2) {
+        NUM_CHIAN.addNumber(pi[i-1], pi[i])
+    }
     canvas.background(BACKGROUND_COLOR);
     G = new GridDelegate(canvas_size, 10);
 
@@ -51,7 +84,13 @@ function setup() {
 function draw() {
     // canvas.clear();
     G.drawGrid(LINE_COLOR, TILE_COLOR);
-    get_line(3,4,7,8).draw();
+    G.highlight(num[0],num[1])
+    get_lines(G.step, NUM_CHIAN.numbers).forEach(function (line) {
+        line.draw();
+    });
+    get_sprites(G.step, NUM_CHIAN.numbers).forEach(function (sprite) {
+        sprite.draw();
+    })
 
 
 }
