@@ -71,10 +71,10 @@ function setup() {
     frameRate(5 );
     num = []
     NUM_CHIAN = new NumberChain();
-    pi = "3141592653589793238462643"
-    for (let i = 1; i < pi.length; i+=2) {
-        NUM_CHIAN.addNumber(pi[i-1], pi[i])
-    }
+    // pi = "3141592653589793238462643"
+    // for (let i = 1; i < pi.length; i+=2) {
+    //     NUM_CHIAN.addNumber(pi[i-1], pi[i])
+    // }
     canvas.background(BACKGROUND_COLOR);
     G = new GridDelegate(canvas_size, 10);
 
