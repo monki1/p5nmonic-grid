@@ -12,10 +12,11 @@ function get_sprite(src, step, y, x){
     return sprite
 }
 
-function draw_line(y1, x1, y2, x2, color=[100, 100, 100]){
-   orig = {x: x1*step, y: y1*step}
-    dest = {x: x2*step, y: y2*step}
+function get_line(y1, x1, y2, x2, color=[100, 100, 100]){
+   orig = {x: (x1+0.5)*step, y: (y1+0.5)*step}
+    dest = {x: (x2+0.5)*step, y: (y2+0.5)*step}
     let line = new LineSprite(step, orig, dest, color)
+    return line
 }
 
 

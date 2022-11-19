@@ -72,7 +72,7 @@ class ImageSprite extends Sprite{
 }
 
 class LineSprite extends Sprite{
-    constructor(step, orig, dest, color=[100,100,100], stroke_weight=100) {
+    constructor(step, orig, dest, color=[100,100,100], stroke_weight=3) {
         super(null, step,orig)
         this.dest = dest
         this._stroke_weight = stroke_weight

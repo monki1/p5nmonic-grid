@@ -8,10 +8,9 @@ let sprite_proportions = 0.9;
 let canvas_proportion = 1;
 var G;
 var input_delegate;
-var SD;
 let cow
 let canvas;
-let gameInterval;
+let NUM_CHIAN = new NumberChain();
 
 
 
@@ -21,6 +20,7 @@ function keyTyped() {
     //     input_delegate.keyTyped(key)
     }
     // console.log(key)
+
 }
 
 function preload() {
@@ -51,6 +51,7 @@ function setup() {
 function draw() {
     // canvas.clear();
     G.drawGrid(LINE_COLOR, TILE_COLOR);
+    get_line(3,4,7,8).draw();
 
 
 }
