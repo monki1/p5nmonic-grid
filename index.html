@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js example</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+  <script src="sketch.js"></script>
+  <script src="grid_graphics/draw_gridlines.js"></script>
+  <script src="grid_graphics/draw_gridtiles.js"></script>
+  <script src="grid_graphics/draw_grid.js"></script>
+  <script src="grid_graphics/sprite.js"></script>
+  <script src="grid_graphics/grid_delegate.js"></script>
+
+  <script src="grid_graphics/highlight.js"></script>
+<script src="grid_graphics/generate_number_label.js"></script>
+</head>
+
+<body>
+<main>
+<!--    <div id="startPage">-->
+<!--      <span id="score">Score: 0</span>-->
+<!--      <button id="startButton">START</button>-->
+<!--    </div>-->
+    <div id="canvas" display="flow"></div>
+    <div id="keypadContainer">
+      <div id="number_display">
+        <H1 id="number_label">e _numbers</H1>
+      </div>
+    <div id="keypad">
+      <button class="keypadkey" onclick="input_delegate.keyTyped(1)">1</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(2)">2</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(3)">3</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(4)">4</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(5)">5</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(6)">6</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(7)">7</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(8)">8</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(9)">9</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped('A')">A</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped(0)">0</button>
+      <button class="keypadkey" onclick="input_delegate.keyTyped('B')">B</button>
+    </div>
+    </div>
+<!--    <canvas id="defaultCanvas0" class="p5Canvas" ></canvas>-->
+
+  </main>
+</body>
+
+</html>
