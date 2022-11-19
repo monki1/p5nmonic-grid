@@ -78,6 +78,10 @@ function setup() {
     canvas.background(BACKGROUND_COLOR);
     G = new GridDelegate(canvas_size, 10);
 
+    randomColor = ()=>{
+        return  Math.floor(Math.random() * 200 + 25)
+    }
+    TILE_COLOR = [randomColor(), randomColor(), randomColor()];
 
 
 }
